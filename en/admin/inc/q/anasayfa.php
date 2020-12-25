@@ -1,8 +1,8 @@
 <?php echo !defined("INDEX") ? header("Location: " . URL . "en/404.html") : null;
 
-// //kayıt sayılarını öğrenme
-// $sorgu = $db->query("SELECT kanolayagiid FROM kanolayagitr WHERE kanolayagi_p=0", PDO::FETCH_ASSOC);
-// $sayfa1 = $sorgu->rowCount();
+//kayıt sayılarını öğrenme
+$sorgu = $db->query("SELECT yapılılacak_yardımlar_id FROM yapılacak_yardımlar WHERE yapılılacak_yardımlar_p=0", PDO::FETCH_ASSOC);
+$sayfa1 = $sorgu->rowCount();
 // //kayıt sayılarını öğrenme
 // $sorgu = $db->query("SELECT aycicegiyagid FROM aycicegiyagtr WHERE aycicegiyag_p=0", PDO::FETCH_ASSOC);
 // $sayfa2 = $sorgu->rowCount();
@@ -67,10 +67,10 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-success">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Kanola Yağı</div>
+                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam yapılan yardımlar</div>
                         <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa1; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=Kanola-yagien"; ?>">İçerikleri Göster</a>
+                            <p>Toplam <?php echo $sayfa1; ?> yardım var.</p>
+                            <a href="<?php echo URL . "/en/admin/index.php?do=Kanola-yagien"; ?>">Yardımları Göster</a>
                         </div>
                     </div>
                 </div>
@@ -78,10 +78,10 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-primary">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Ayçiçek Yağı</div>
+                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam yapılacak yardımlar</div>
                         <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa2; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=aycicek-yagitr"; ?>">İçerikleri Göster</a>
+                            <p>Toplam <?php echo $sayfa2; ?> yardım var.</p>
+                            <a href="<?php echo URL . "/en/admin/index.php?do=aycicek-yagitr"; ?>">yardım Göster</a>
                         </div>
                     </div>
                 </div>
@@ -89,10 +89,10 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Zeytin Yağı</div>
+                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Yardımseverler</div>
                         <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa3; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=zeytinyagitr"; ?>">İçerikleri Göster</a>
+                            <p>Toplam <?php echo $sayfa3; ?> Yardımsever var.</p>
+                            <a href="<?php echo URL . "/en/admin/index.php?do=zeytinyagitr"; ?>">Yardımseverleri Göster</a>
                         </div>
                     </div>
                 </div>
@@ -100,125 +100,15 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="panel panel-warning">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Salçalar Ve Soslar</div>
+                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Kullanıcılar</div>
                         <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa4; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=salcalartr"; ?>">İçerikleri Göster</a>
+                            <p>Toplam <?php echo $sayfa4; ?> Kullanıcı var.</p>
+                            <a href="<?php echo URL . "/en/admin/index.php?do=salcalartr"; ?>">Kullanıcıları Göster</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Bakliyatlar Yağı</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa5; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=abakliyattr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Kuruyemiş</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa6; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=kuruyemistr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Donuk Deniz Ürünleri</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa7; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=donukdeniztr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Donuk Sebze Ürünleri</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa8; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=donuksebzetr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Peynirler </div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa9; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=peynirtr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Köpük bardak ve tabaklar</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa10; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=kopukbardaktr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Peçeteler</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa11; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=pecetelertr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Karton Bardak ve Tabak</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa12; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=kartonbardaktr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Plastik Bardak ve Tabak</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa13; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=plastikkaptr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Alemiyum Folyo</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa14; ?> İçerik var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=alemiyumfolyotr"; ?>">İçerikleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+         
 
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
