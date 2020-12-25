@@ -43,9 +43,9 @@ if ($_POST) {
 
         <div class="item row">
             <form action="" method="POST" enctype="multipart/form-data">
-                <label>Yardımın Başlığı </label> <input type="text" name="yapılan_yardımlar_baslik" class="form-control" placeholder="Sayfa Başlığı" />
+                <label>Yardımın Başlığı </label> <input type="text" name="yapılan_yardımlar_baslik" class="form-control" placeholder="Yardım Başlığı" />
 
-                <label>Yardımın Adresi </label> <input type="text" name="yapılan_yardımlar_adres" class="form-control" placeholder="Sayfa Başlığı" />
+                <label>Yardımın Adresi </label> <input type="text" name="yapılan_yardımlar_adres" class="form-control" placeholder="Yardım Adres" />
  <label for="birthday">Birthday:</label><br>
 <input type="date" class="form-control" id="birthday" name="birthday"> <br>
                 <label>Resim: </label><input type="file" name="resim1" class="form-control" placeholder=" Küçük Resim URL" />
