@@ -1,0 +1,17 @@
+.help-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0px;
+  color: $beyaz;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: $anarenk;
+  margin-bottom: 10px;
+  @include transition(0.5s);
+
+  &:hover {
+    letter-spacing: 0.6px;
+  }
+}

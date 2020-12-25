@@ -1,0 +1,212 @@
+$anarenk: #00b894;
+$siyah: #333;
+$beyaz: #fff;
+
+.navbar {
+  background-color: transparent;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+
+  .menu-toggle {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display: none;
+
+    span {
+      display: block;
+      width: 40px;
+      height: 2px;
+      margin-bottom: 8px;
+      background-color: $beyaz;
+    }
+  }
+
+  .logo {
+    font-size: 35px;
+    color: $anarenk;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  ul {
+    display: flex;
+    padding: 0 30px;
+
+    li {
+      margin-right: 10px;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        color: $beyaz;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+
+        &:hover {
+          color: $anarenk;
+        }
+
+        i {
+          color: $anarenk;
+          font-size: 19px;
+          transition: 0.5s;
+          -webkit-transition: 0.5s;
+          -moz-transition: 0.5s;
+          -ms-transition: 0.5s;
+          -o-transition: 0.5s;
+
+          &:hover {
+            color: $beyaz;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stiyk {
+  background-color: $beyaz;
+  padding: 5px 20px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+
+  .menu-toggle {
+    span {
+      background-color: $siyah;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        color: $siyah;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar {
+    .navbar-menu {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background-color: $siyah;
+      top: 0;
+      right: -1100px;
+      max-width: 400px;
+      z-index: 9999;
+      overflow: hidden;
+      transition: 0.5s all;
+      -webkit-transition: 0.5s all;
+      -moz-transition: 0.5s all;
+      -ms-transition: 0.5s all;
+      -o-transition: 0.5s all;
+
+      ul {
+        display: block;
+        padding-top: 100px;
+
+        li {
+          a {
+            display: block;
+            margin-bottom: 15px;
+            padding: 0 15px;
+            color: $beyaz;
+            font-size: 20px;
+          }
+        }
+      }
+
+      &.active {
+        right: 0;
+      }
+    }
+
+    ul {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+      position: fixed;
+      right: 20px;
+      top: 15px;
+      z-index: 9999999;
+
+      &.active span:nth-child(1) {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        top: 20px;
+      }
+
+      &.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+      }
+
+      &.active span:nth-child(2) {
+        transform: translateX(100px);
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        -o-transform: translateX(100px);
+      }
+
+      span {
+        transition: 0.5s all;
+        position: relative;
+        display: block;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        -o-transition: 0.5s all;
+      }
+    }
+  }
+
+  .stiyk {
+    .menu-toggle {
+      &.active span {
+        z-index: 999999999;
+        background-color: $beyaz;
+        color: $beyaz;
+      }
+
+      span {
+        background-color: $siyah;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        -o-transition: 0.5s all;
+      }
+    }
+  }
+}
