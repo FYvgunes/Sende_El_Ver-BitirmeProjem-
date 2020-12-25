@@ -8,7 +8,6 @@ if ($_POST) {
     $Konala_title = p('yapılan_yardımlar_adres');
     $Konala_date = p('birthday');
     $Konala_baslik = p('yapılan_yardımlar_baslik');
-    
     $posted = "resim1";
 
 
@@ -23,10 +22,11 @@ if ($_POST) {
         }
         $hedef1 = "resimler/" . $yeniad;
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
-            $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılan_yardımlar_p=0, yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih= '{$Konala_date}',    yapılan_yardımlar_url='{$hedef1}', yapılan_yardımlar_adres='{$Konala_title}', yapılan_yardımlar_text='{$Konala_text}'");
+            $insert = $db->exec("INSERT INTO yapılan_yardımlar  SET yapılan_yardımlar_p=0, yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih='{$Konala_date}',    yapılan_yardımlar_url='{$hedef1}',  yapılan_yardımlar_adres='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}'");
+      
             //$insert->execute();
             echo "<p class='alert alert-success'>Yardım başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-            header("Refresh: 1; url=" . URL . "/en/admin/index.php?do=yapılan_yardımlar");
+            header("Refresh: 1; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar");
         } else {
             echo "<p class='alert alert-danger'>Dosya ekleme işlemlerinde hata oluştu</p>";
         }
@@ -43,16 +43,16 @@ if ($_POST) {
 
         <div class="item row">
             <form action="" method="POST" enctype="multipart/form-data">
-                            <label>Yardımın Başlığı </label> <input type="text" name="yapılan_yardımlar_baslik   " class="form-control" placeholder="Sayfa Başlığı" />
+                <label>Yardımın Başlığı </label> <input type="text" name="yapılan_yardımlar_baslik" class="form-control" placeholder="Sayfa Başlığı" />
 
-                <label>Yardımın Adresi </label> <input type="text" name="yapılan_yardımlar_adres   " class="form-control" placeholder="Sayfa Başlığı" />
+                <label>Yardımın Adresi </label> <input type="text" name="yapılan_yardımlar_adres" class="form-control" placeholder="Sayfa Başlığı" />
  <label for="birthday">Birthday:</label><br>
 <input type="date" class="form-control" id="birthday" name="birthday"> <br>
                 <label>Resim: </label><input type="file" name="resim1" class="form-control" placeholder=" Küçük Resim URL" />
 
-                <label>Yardım Detay </label><textarea name="yapılan_yardımlar_text   "></textarea>
+                <label>Yardım Detay </label><textarea name="yapılan_yardımlar_text"></textarea>
                 <script>
-                    CKEDITOR.replace('yapılan_yardımlar_text   ');
+                    CKEDITOR.replace('yapılan_yardımlar_text');
                 </script>
 
 
