@@ -7,7 +7,7 @@ require_once('config.php');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEV - Giriş Yöntemi</title>
+    <title>SEV - Yardımsever Kayıt</title>
     <link rel="stylesheet" href="Assets/css/main.css" />
     <link
       rel="stylesheet"
@@ -16,21 +16,22 @@ require_once('config.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="body">
-      <!-- Header Start -->
+     <!-- Header Start -->
    <?php include "inc/Header.php";?>
    <!-- Header End -->
+    <div class="giris">
+      <form action="" class="form-giris">
+        <h1><i class="fas fa-users"></i>Yardımsever Kayıt</h1>
+        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Kullanıcı Adı" />
+        <input type="text" name= "Kullanıcıemail" class="name-admin" placeholder="E-mail Adresi" />
+        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Şifreniz" />
 
-    <section id="giris-yontemi">
-      <div class="giris-yontemi">
-        <h1>Giriş Yöntemi</h1>
-        <button>
-          <i class="fas fa-user-secret"></i>
-          Admin Giriş
-        </button>
-        <button><i class="fas fa-user"></i> Yardımsever Giriş</button>
-        <button><i class="fas fa-user-circle"></i>Gönüllü Giriş</button>
-      </div>
-    </section>
+        <div class="form-grub">
+          
+          <button type="Submit" class="kayit_btn">Kayıt Ol</button>
+        </div>
+      </form>
+    </div>
     <div class="footer-admin">
       <p>Copyright @2020 Desing And Creating by <a href="#">Veysel GÜNEŞ</a></p>
     </div>

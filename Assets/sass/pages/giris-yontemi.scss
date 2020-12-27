@@ -6,6 +6,7 @@
 .body {
   background-color: black;
 }
+
 #giris-yontemi {
   .giris-yontemi {
     width: 100%;
@@ -14,12 +15,46 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     h1 {
       color: white;
       font-size: 50px;
       padding: 10px 0;
       border-bottom: 1px solid White;
     }
+
+    .all_btn {
+      background-color: $anarenk;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+      padding: 10px 15px;
+      min-width: 310px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .all_btn1 {
+      background-color: white;
+      color:$anarenk;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+      padding: 10px 102px 10px 106px;
+      min-width: 310px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
     button {
       border: none;
       outline: none;
@@ -38,6 +73,7 @@
         background-color: $anarenk;
         color: white;
       }
+
       i {
         position: absolute;
         left: 70px;
@@ -46,10 +82,13 @@
     }
   }
 }
+
 .footer-admin {
   text-align: center;
+
   p {
     color: $beyaz;
+
     a {
       color: $beyaz;
       text-decoration: none;

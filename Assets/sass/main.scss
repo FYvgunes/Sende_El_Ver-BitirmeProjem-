@@ -11,3 +11,17 @@
 @import "base/title";
 @import "base/help_button";
 @import "component/responsive.scss";
+
+
+.register_label{
+
+color: white;
+float: left;
+font-size: 18px;
+font-weight: 500;
+margin-bottom: 10px;
+}
+.kayit_btn{
+    cursor: pointer;
+    width: 100%;
+}

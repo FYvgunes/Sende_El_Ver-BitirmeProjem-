@@ -9,22 +9,22 @@
       <div class="navbar-menu">
         <ul>
           <li>
-            <a href="#">Anasayfa</a>
+            <a href="index.php">Anasayfa</a>
           </li>
           <li>
-            <a href="#">Hakkımızda</a>
+            <a href="hakkımızda.php">Hakkımızda</a>
           </li>
           <li>
-            <a href="#">Yardımlar</a>
+            <a href="yardımlar.php">Yardımlar</a>
           </li>
           <li>
-            <a href="#">iletişim</a>
+            <a href="İletişim.php">iletişim</a>
           </li>
           <li>
             <a href="giris_yontemi.php"><i class="fas fa-sign-out-alt"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fas fa-user-plus"></i></a>
+            <a href="kayit_yöntemi.php"><i class="fas fa-user-plus"></i></a>
           </li>
         </ul>
       </div>

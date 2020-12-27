@@ -31,9 +31,9 @@ require_once('config.php');
           </p>
         </div>
         <div class="slides current">
-          <h1>Kalan Yemekleri Çöpe ATMA</h1>
+          <h1>slide 2 </h1>
           <p>
-            Yemediğiniz yemkeleri çöpe atmayarak küçük doslarımız için
+            Yemediğiniz yemkeleri0 çöpe atmayarak küçük doslarımız için
             hazırlanaıp barınak ve uygun ye konumdaki yerlere hayvanlara vermke
             için topluyoruz
           </p>
