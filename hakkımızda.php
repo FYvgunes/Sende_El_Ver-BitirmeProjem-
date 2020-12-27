@@ -1,3 +1,7 @@
+<?php
+define("INDEX", true);
+require_once('config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,36 +17,10 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <a href="#" class="logo">SEV</a>
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-menu">
-        <ul>
-          <li>
-            <a href="#">Anasayfa</a>
-          </li>
-          <li>
-            <a href="#">Hakkımızda</a>
-          </li>
-          <li>
-            <a href="#">Yardımlar</a>
-          </li>
-          <li>
-            <a href="#">iletişim</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-sign-out-alt"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-user-plus"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <!-- Header Start -->
+     <?php include "inc/Header.php";?>
+  <!-- Header End -->
+
     <div class="hakkimizda">
       <div class="header-title">
         <h1>SENDE EL VER HAKKINDA</h1>
@@ -102,53 +80,8 @@
 
     <!-- Hakkımızda kısmı End -->
     <!-- Footer Start -->
-    <footer>
-      <div class="footers">
-        <div class="footer">
-          <div class="logo">SEV</div>
-          <p>
-            Sende El Ver kuruluşumuz olarak Yardıma muhtac küçük dosylarımuz
-            için Lokanta Ev Vs yerlerde fazla kalan yemekleri dostlarımıza
-            ulaştırıyoruz. Böylece hem yemeklerimiz çöpe gitmemiş oluyor. Hemde
-            küçük dostlarımız mutlu etmiş oluyoruz.
-          </p>
-        </div>
-        <div class="footer">
-          <h2>Site Haritası</h2>
-          <ul>
-            <li><a href="#">Anasayfa</a></li>
-            <li><a href="#">Hakkımızda</a></li>
-            <li><a href="#">Yardımlar</a></li>
-            <li><a href="#">İletişim</a></li>
-            <li><a href="#">Giriş</a></li>
-            <li><a href="#">üye Ol</a></li>
-          </ul>
-        </div>
-        <div class="footer">
-          <h2>Kısa Kısa</h2>
-          <ol>
-            <li><a href="#">- Sık sorulan Sorular</a></li>
-            <li><a href="#">- Hangi Bölgelerde hizmet veriyorsunuz</a></li>
-            <li><a href="#">- gönüllü olarak yardım edebilir miyiz</a></li>
-            <li><a href="#">- Ne zamandır hizmet veriyorsunuz</a></li>
-          </ol>
-        </div>
-      </div>
-      <hr />
-      <div class="sociol_icon">
-        <ul>
-          <li><img src="/Assets/images/icons/facebook.svg" alt="" /></li>
-          <li><img src="/Assets/images/icons/google-plus.svg" alt="" /></li>
-          <li><img src="/Assets/images/icons/instagram.svg" alt="" /></li>
-          <li><img src="/Assets/images/icons/linkedin.svg" alt="" /></li>
-          <li><img src="/Assets/images/icons/twitter.svg" alt="" /></li>
-        </ul>
-        <h4>Bizi Sosyal Medyadan Takip Ediniz</h4>
-        <h4>
-          Copyright @2020 Desing And Creating by <a href="#">Veysel GÜNEŞ</a>
-        </h4>
-      </div>
-    </footer>
+     <?php include "inc/footer.php";?>
+
 
     <!-- Footer End -->
     <script type="text/javascript">

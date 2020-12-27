@@ -1,3 +1,7 @@
+<?php
+define("INDEX", true);
+require_once('config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,36 +16,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="body">
-    <div class="navbar">
-      <a href="#" class="logo">SEV</a>
-      <button class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-menu">
-        <ul>
-          <li>
-            <a href="#">Anasayfa</a>
-          </li>
-          <li>
-            <a href="#">Hakkımızda</a>
-          </li>
-          <li>
-            <a href="#">Yardımlar</a>
-          </li>
-          <li>
-            <a href="#">iletişim</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-sign-out-alt"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-user-plus"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <!-- Header Start -->
+     <?php include "inc/Header.php";?>
+  <!-- Header End -->
+   
     <div class="giris">
       <form action="" class="form-giris">
         <h1><i class="fas fa-user-circle"></i>Gönüllü Giriş Yap</h1>
