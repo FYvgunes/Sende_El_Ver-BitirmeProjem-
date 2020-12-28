@@ -22,9 +22,9 @@ require_once('config.php');
     <div class="giris">
       <form action="" class="form-giris">
         <h1><i class="fas fa-users"></i>Gönüllü Kayıt</h1>
-        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Kullanıcı Adı" />
-        <input type="text" name= "Kullanıcıemail" class="name-admin" placeholder="E-mail Adresi" />
-        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Şifreniz" />
+        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Kullanıcı Adı"  require/>
+        <input type="text" name= "Kullanıcıemail" class="name-admin" placeholder="E-mail Adresi" require />
+        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Şifreniz" require />
 
         <div class="form-grub">
           

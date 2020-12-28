@@ -1,6 +1,6 @@
 
     <div class="navbar">
-      <a href="#" class="logo">SEV</a>
+      <a href="index.php" class="logo">SEV</a>
       <button class="menu-toggle">
         <span></span>
         <span></span>
