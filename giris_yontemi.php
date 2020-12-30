@@ -25,10 +25,13 @@ require_once('config.php');
         <h1>Giriş Yöntemi</h1>
         <button>
           <i class="fas fa-user-secret"></i>
-          Admin Giriş
+          <a href="<?php echo URL?>/en/admin" style="text-decoration: none;
+color: black;">Admin Giriş</a>
         </button>
-        <button><i class="fas fa-user"></i> Yardımsever Giriş</button>
-        <button><i class="fas fa-user-circle"></i>Gönüllü Giriş</button>
+        <button><i class="fas fa-user"></i><a href="<?php echo URL?>/en/Yardım" style="text-decoration: none;
+color: black;">Yardımsever Giriş</a> </button>
+        <button><a href="<?php echo URL?>/en/gonullu" style="text-decoration: none;
+color: black;"><i class="fas fa-user-circle"></i>Gönüllü Giriş</a></button>
       </div>
     </section>
     <div class="footer-admin">

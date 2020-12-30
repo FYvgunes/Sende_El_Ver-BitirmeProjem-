@@ -20,16 +20,23 @@ require_once('config.php');
    <?php include "inc/Header.php";?>
    <!-- Header End -->
     <div class="giris">
-      <form action="" class="form-giris">
+      <form  action="inc/gonullu_kayit.php" nama="myform" method="POST" class="form-giris">
         <h1><i class="fas fa-users"></i>Gönüllü Kayıt</h1>
         <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Kullanıcı Adı"  require/>
-        <input type="text" name= "Kullanıcıemail" class="name-admin" placeholder="E-mail Adresi" require />
-        <input type="text" name= "KullaniciAdi" class="name-admin" placeholder="Şifreniz" require />
+        <input type="email" name= "Kullanıcıemail" class="name-admin" placeholder="E-mail Adresi" require />
+        <input type="password" name= "KullaniciAdi" class="name-admin" placeholder="Şifreniz" require />
 
         <div class="form-grub">
           
           <button type="Submit" class="kayit_btn">Kayıt Ol</button>
         </div>
+         <?php if (isset($_SESSION["alert"])) { ?>
+        <p style="text-align: center; padding:10px 15px; color:white; background-color:<?php echo $_SESSION["alert"]["type"]; ?>;">
+          <?php echo $_SESSION["alert"]["message"]; ?>
+        </p>
+        <?php unset($_SESSION["alert"]); ?>
+
+        <?php } ?>
       </form>
     </div>
     <div class="footer-admin">

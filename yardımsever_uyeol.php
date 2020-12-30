@@ -46,7 +46,7 @@ require_once('config.php');
   <div class="footer-admin">
     <p>Copyright @2020 Desing And Creating by <a href="#">Veysel GÜNEŞ</a></p>
   </div>
-<script src="/Assest/js/formvalid.js"></script>
+
   <script type="text/javascript">
     $(document).ready(function () {
       $(window).scroll(function () {
@@ -61,6 +61,16 @@ require_once('config.php');
         $(".navbar-menu").toggleClass("active");
       });
     });
+
+    function validateForm() {
+    var x = document.forms["myForm"]["KullaniciAdi"].value;
+    var y = document.forms["myForm"]["Kullanıcıemail"].value;
+    var z = document.forms["myForm"]["Kullanicisifre"].value;
+    if (x == "" || y == "" || z == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
   </script>
 </body>
 
