@@ -1,7 +1,7 @@
 <?php
 echo !defined("INDEX") ? header("Location: kontrol.php") : null; 
 session_destroy();
-header("Refresh: 1; url=".URL."/en/admin/");
+header("Refresh: 1; url=".URL."/en/Yardim/");
 ?>
 <section class="section">
 	<div class="section-inner">

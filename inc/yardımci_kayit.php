@@ -9,7 +9,7 @@ if ($_POST) {
 
     $Kullanıcı_adi= p('KullaniciAdi');
     $Kullanıcı_Email = p('Kullanıcıemail');
-    $Kullanıcı_sifre= sifre('Kullanicisifre');
+    $Kullanıcı_sifre= p('Kullanicisifre');
    
 if(empty($Kullanıcı_adi) || empty($Kullanıcı_Email) || empty( $Kullanıcı_sifre)){
 			 $alert = array(
@@ -20,6 +20,7 @@ if(empty($Kullanıcı_adi) || empty($Kullanıcı_Email) || empty( $Kullanıcı_s
                     $_SESSION["alert"]=$alert;
                     header("location:/Bitirme/yardımsever_uyeol.php");
 		}else{
+
 			$sorgu = $db->prepare("SELECT COUNT(*) FROM yardimci WHERE yardimci_username ='{$Kullanıcı_adi}'");
 			$sorgu->execute();
 			$say = $sorgu->fetchColumn();
@@ -34,6 +35,7 @@ if(empty($Kullanıcı_adi) || empty($Kullanıcı_Email) || empty( $Kullanıcı_s
                     header("location:/Bitirme/yardımsever_uyeol.php");
 				
 			}else{
+               
 				$insert = $db->exec("INSERT INTO yardimci SET  yardimci_username='{$Kullanıcı_adi}', yardimci_email ='{$Kullanıcı_Email}', yardimci_sifre ='{$Kullanıcı_sifre}' ");
 				//$insert->execute();
 				$alert = array(

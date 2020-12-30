@@ -26,7 +26,7 @@ if ($_POST) {
             $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılılacak_yardımlar_p =0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılacak_yardımlar_tarih = '{$Konala_date}',   yapılılacak_yardımlar_url ='{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılılacak_yardımlar_text ='{$Konala_text}'");
             //$insert->execute();
             echo "<p class='alert alert-success'>Yardım başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-            header("Refresh: 1; url=" . URL . "/en/admin/index.php?do=yapilacak_yardimlar");
+            header("Refresh: 1; url=" . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar");
         } else {
             echo "<p class='alert alert-danger'>Dosya ekleme işlemlerinde hata oluştu</p>";
         }
@@ -39,7 +39,7 @@ if ($_POST) {
 <section class="section">
     <div class="section-inner">
 
-        <h2 class="heading"><i class="fa fa-plus"></i> Yapılacak Yardımlar<br /><small><a href="<?php echo URL . "/en/admin/index.php?do=yapılacak_yardımlar "; ?>"><i class="fa fa-file-text-o"></i> İçerikleri Göster </a></small></h2>
+        <h2 class="heading"><i class="fa fa-plus"></i> Yapılacak Yardımlar<br /><small><a href="<?php echo URL . "/en/Yardim/index.php?do=yapılacak_yardımlar "; ?>"><i class="fa fa-file-text-o"></i> İçerikleri Göster </a></small></h2>
 
         <div class="item row">
             <form action="" method="POST" enctype="multipart/form-data">

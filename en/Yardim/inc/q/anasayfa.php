@@ -62,7 +62,7 @@ $sayfa1 = $sorgu->rowCount();
     <div class="section-inner">
         <h2 class="heading"><i class="fa fa-dashboard"></i> Yönetim Paneli</h2>
         <div class="item">
-            <p class="alert alert-info"><i class="fa fa-user"></i> Hoşgeldin, <?php echo $_SESSION['admin_username']; ?>!</p>
+            <p class="alert alert-info"><i class="fa fa-user"></i> Hoşgeldin, <?php echo $_SESSION['yardimci_username']; ?>!</p>
 
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -70,7 +70,7 @@ $sayfa1 = $sorgu->rowCount();
                         <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam yapılan yardımlar</div>
                         <div class="panel-body text-center">
                             <p>Toplam <?php echo $sayfa1; ?> yardım var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=Kanola-yagien"; ?>">Yardımları Göster</a>
+                            <a href="<?php echo URL . "/en/Yardim/index.php?do=yapilan_yardimlar"; ?>">Yardımları Göster</a>
                         </div>
                     </div>
                 </div>
@@ -81,46 +81,12 @@ $sayfa1 = $sorgu->rowCount();
                         <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam yapılacak yardımlar</div>
                         <div class="panel-body text-center">
                             <p>Toplam <?php echo $sayfa2; ?> yardım var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=aycicek-yagitr"; ?>">yardım Göster</a>
+                            <a href="<?php echo URL . "/en/Yardim/index.php?do=yapilacak_yardimlar"; ?>">yardım Göster</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Yardımseverler</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa3; ?> Yardımsever var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=zeytinyagitr"; ?>">Yardımseverleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Kullanıcılar</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa4; ?> Kullanıcı var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=salcalartr"; ?>">Kullanıcıları Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-comments"></i> Mesajlar</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $mesaj; ?> Mesaj var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=mesaj"; ?>">Mesajları Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
         </div>
         <hr />
 

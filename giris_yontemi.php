@@ -28,7 +28,7 @@ require_once('config.php');
           <a href="<?php echo URL?>/en/admin" style="text-decoration: none;
 color: black;">Admin Giriş</a>
         </button>
-        <button><i class="fas fa-user"></i><a href="<?php echo URL?>/en/Yardım" style="text-decoration: none;
+        <button><i class="fas fa-user"></i><a href="<?php echo URL?>/en/Yardim" style="text-decoration: none;
 color: black;">Yardımsever Giriş</a> </button>
         <button><a href="<?php echo URL?>/en/gonullu" style="text-decoration: none;
 color: black;"><i class="fas fa-user-circle"></i>Gönüllü Giriş</a></button>

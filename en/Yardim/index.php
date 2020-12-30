@@ -37,8 +37,10 @@ require_once('../config.php');
                         if (empty($kadi) || empty($sifre)) {
                             $mesaj = "Kullanıcı Adı ve Şifre boş bırakılamaz...";
                         } else {
-                            $sifre = sifre($sifre);
-                            $giris = $db->query("SELECT * FROM yardimci WHERE yardimci_username='{$kadi}' AND yardimci_sifre='{$sifre}'");
+                           
+                          
+                            $giris = $db->query("SELECT * FROM yardimci WHERE yardimci_username='{$kadi}' AND yardimci_sifre='{$sifre}' ");
+                           
                             if ($giris->rowCount()) {
                                 $girdi = $giris->fetch(PDO::FETCH_ASSOC);
                                 $_SESSION['yardimci_id'] = $girdi['yardimci_id'];
@@ -53,7 +55,7 @@ require_once('../config.php');
                     }
                     ?>
                     <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-sign-in"></i> Giriş Yap</div>
+                        <div class="panel-heading"><i class="fa fa-sign-in"></i> Yardımsever Girişi</div>
                         <div class="panel-body">
                             <?php if ($_POST) {
                                 echo '<p class="alert alert-danger">' . $mesaj . '</p>';

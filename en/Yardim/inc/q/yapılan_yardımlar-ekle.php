@@ -26,7 +26,7 @@ if ($_POST) {
       
             //$insert->execute();
             echo "<p class='alert alert-success'>Yardım başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-            header("Refresh: 1; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar");
+            header("Refresh: 1; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar");
         } else {
             echo "<p class='alert alert-danger'>Dosya ekleme işlemlerinde hata oluştu</p>";
         }
@@ -39,7 +39,7 @@ if ($_POST) {
 <section class="section">
     <div class="section-inner">
 
-        <h2 class="heading"><i class="fa fa-plus"></i> Yapılan Yardımlar<br /><small><a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar "; ?>"><i class="fa fa-file-text-o"></i> Yardımları Göster </a></small></h2>
+        <h2 class="heading"><i class="fa fa-plus"></i> Yapılan Yardımlar<br /><small><a href="<?php echo URL . "/en/Yardim/index.php?do=yapılan_yardımlar "; ?>"><i class="fa fa-file-text-o"></i> Yardımları Göster </a></small></h2>
 
         <div class="item row">
             <form action="" method="POST" enctype="multipart/form-data">

@@ -3,7 +3,7 @@
 <?php
 $id = g('id');
 if (empty($id)) {
-    header("Location: " . URL . "/en/admin/index.php?do=yapilan_yardimlar");
+    header("Location: " . URL . "/en/Yardim/index.php?do=yapilan_yardimlar");
     exit;
 } else {
     $sor = $db->query("SELECT * FROM  yapılan_yardımlar     WHERE  yapılan_yardımlar_id ={$id} AND  yapılan_yardımlar_p=0");
@@ -13,7 +13,7 @@ if (empty($id)) {
     if ($Blog_varmi > 0) {
         null;
     } else {
-        header("Location: " . URL . "/en/admin/index.php?do=yapilan_yardimlar");
+        header("Location: " . URL . "/en/Yardim/index.php?do=yapilan_yardimlar");
         exit;
     }
 }
@@ -28,12 +28,12 @@ if ($_POST) {
 
         $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-        header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar ");
+        header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar ");
     }else if (!empty($Konala_date)){
 
         $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_tarih ='{$Konala_date}',  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-        header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar  ");
+        header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar  ");
     } 
     else if ($_FILES["resim1"]['name']) {
         $filename = $_FILES["$posted"]['name'];
@@ -47,7 +47,7 @@ if ($_POST) {
             $insert = $db->exec("UPDATE   yapılan_yardımlar   SET   yapılan_yardımlar_p =0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih = '{$Konala_date}',   yapılan_yardımlar_url  ='{$hedef1}',  yapılan_yardımlar_adres ='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}'");
             //$insert->execute();
             echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-            header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar ");
+            header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar ");
         } else {
             echo "<p class='alert alert-danger'>Dosya ekleme işlemlerinde hata oluştu</p>";
         }
@@ -61,7 +61,7 @@ $Blog = $sor->fetch(PDO::FETCH_ASSOC);
 <section class="section">
     <div class="section-inner">
         <h2 class="heading"><i class="fa fa-plus"></i> Yapılan Yardımlar Düzenle<br /><small><a
-                    href="<?php echo URL . "/en/admin/index.php?do=yapilan_yardimlar "; ?>"><i
+                    href="<?php echo URL . "/en/Yardim/index.php?do=yapilan_yardimlar "; ?>"><i
                         class="fa fa-file-text-o"></i> Yardımları Göster Göster </a></small></h2>
 
         <div class="item row">

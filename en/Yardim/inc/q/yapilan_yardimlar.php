@@ -3,7 +3,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
 ?>
 <section class="section">
     <div class="section-inner">
-        <h2 class="heading"><i class="fa fa-file-text-o"></i> Yapılan Yardımlar<br /><small><a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-ekle"; ?>"><i class="fa fa-plus"></i> İçerik Ekle</a></small></h2>
+        <h2 class="heading"><i class="fa fa-file-text-o"></i> Yapılan Yardımlar<br /><small><a href="<?php echo URL . "/en/Yardim/index.php?do=yapılan_yardımlar-ekle"; ?>"><i class="fa fa-plus"></i> İçerik Ekle</a></small></h2>
         <div class="item row">
             <?php
             $sorgu = $db->query("SELECT yapılan_yardımlar_id FROM yapılan_yardımlar WHERE yapılan_yardımlar_p =0 ", PDO::FETCH_ASSOC);
@@ -22,7 +22,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
                 <div class="list-group-item list-trend">
                     <div class="clearfix content-heading">
                         <img class="pull-left img-trend" src="<?php echo $content['yapılan_yardımlar_url']; ?>" />
-                        <h3 class="txt-trend">Yapılan Yardımlar <?php echo $content['yapılan_yardımlar_id']; ?> <br /><small><a target="_blank" href="<?php echo URL . "/en/" . $content['yapılan_yardımlar_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-duzenle&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-sil&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
+                        <h3 class="txt-trend">Yapılan Yardımlar <?php echo $content['yapılan_yardımlar_id']; ?> <br /><small><a target="_blank" href="<?php echo URL . "/en/" . $content['yapılan_yardımlar_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/Yardim/index.php?do=yapılan_yardımlar-duzenle&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/Yardim/index.php?do=yapılan_yardımlar-sil&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
                     </div>
                 </div>
             <?php
@@ -40,18 +40,18 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
                         echo "<a><li class='btn btn-default'>" . $sayfa . "/" . $ssayisi . "</li></a>";
                         $forlimit = 1;
                         if ($sayfa > $forlimit) {
-                            echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=1'><li class='btn btn-default'>İlk</li></a>";
+                            echo "<a href='" . URL . "/en/Yardim/index.php?do=" . $do . "&s=1'><li class='btn btn-default'>İlk</li></a>";
                         }
                         for ($i = $sayfa - $forlimit; $i <= $sayfa + $forlimit; $i++) {
                             if ($i > 0 && $i <= $ssayisi) {
                                 if ($i == $sayfa) {
                                     echo "<a href=''><li class='btn btn-default active'>" . $i . "</li></a>";
                                 } else {
-                                    echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=" . $i . "'><li class='btn btn-default'>" . $i . "</li></a>";
+                                    echo "<a href='" . URL . "/en/Yardim/index.php?do=" . $do . "&s=" . $i . "'><li class='btn btn-default'>" . $i . "</li></a>";
                                 }
                             }
                         }
-                        echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=" . $ssayisi . "'><li class='btn btn-default'>Son</li></a>";
+                        echo "<a href='" . URL . "/en/Yardim/index.php?do=" . $do . "&s=" . $ssayisi . "'><li class='btn btn-default'>Son</li></a>";
                         ?>
                     </ul>
                 </div>

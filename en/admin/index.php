@@ -38,7 +38,9 @@ require_once('../config.php');
                             $mesaj = "Kullanıcı Adı ve Şifre boş bırakılamaz...";
                         } else {
                             $sifre = sifre($sifre);
+                          
                             $giris = $db->query("SELECT * FROM Admin WHERE admin_username='{$kadi}' AND admin_password='{$sifre}'");
+                           
                             if ($giris->rowCount()) {
                                 $girdi = $giris->fetch(PDO::FETCH_ASSOC);
                                 $_SESSION['admin_id'] = $girdi['admin_id'];
