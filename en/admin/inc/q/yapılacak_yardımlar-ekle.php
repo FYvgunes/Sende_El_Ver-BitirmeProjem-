@@ -21,9 +21,9 @@ if ($_POST) {
         if (!file_exists("resimler")) {
             mkdir("resimler");
         }
-        $hedef1 = "resimler/" . $yeniad;
+        $hedef1 = "en/admin/resimler/" . $yeniad;
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
-            $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılılacak_yardımlar_p =0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılacak_yardımlar_tarih = '{$Konala_date}',   yapılılacak_yardımlar_url ='{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılılacak_yardımlar_text ='{$Konala_text}'");
+            $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılılacak_yardımlar_p =0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılacak_yardımlar_tarih = '{$Konala_date}',   yapılılacak_yardımlar_url ='{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılılacak_yardımlar_text ='{$Konala_text}' ,yardimci_id=1");
             //$insert->execute();
             echo "<p class='alert alert-success'>Yardım başarıyla eklendi. Lütfen Bekleyiniz...</p>";
             header("Refresh: 1; url=" . URL . "/en/admin/index.php?do=yapilacak_yardimlar");

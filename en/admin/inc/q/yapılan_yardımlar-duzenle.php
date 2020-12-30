@@ -26,25 +26,20 @@ if ($_POST) {
     $posted = "resim1";
     if (empty($_FILES["resim1"]['name'])) {
 
-        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
+        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}', yapılan_yardımlar_tarih = '{$Konala_date}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' ,yardimci_id= 1 WHERE  yapılan_yardımlar_id ={$id}");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
         header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar ");
-    }else if (!empty($Konala_date)){
-
-        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_tarih ='{$Konala_date}',  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
-        echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-        header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar  ");
-    } 
+    }
     else if ($_FILES["resim1"]['name']) {
         $filename = $_FILES["$posted"]['name'];
         $efilename = explode('.', $filename);
         $uzanti = $efilename[count($efilename) - 1];
         $isim = md5(microtime());
         $yeniad = "" . $isim . "." . $uzanti . "";
-        $hedef1 = "resimler/" . $yeniad;
+        $hedef1 = "en/admin/resimler/" . $yeniad;
 
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
-            $insert = $db->exec("UPDATE   yapılan_yardımlar   SET   yapılan_yardımlar_p =0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih = '{$Konala_date}',   yapılan_yardımlar_url  ='{$hedef1}',  yapılan_yardımlar_adres ='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}'");
+            $insert = $db->exec("UPDATE   yapılan_yardımlar   SET   yapılan_yardımlar_p =0 ,yardimci_id= 1,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih = '{$Konala_date}',   yapılan_yardımlar_url  ='{$hedef1}',  yapılan_yardımlar_adres ='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}' WHERE  yapılan_yardımlar_id ={$id}");
             //$insert->execute();
             echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
             header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilan_yardimlar ");
@@ -75,7 +70,7 @@ $Blog = $sor->fetch(PDO::FETCH_ASSOC);
                     placeholder="Yardımın Adresi" />
                 <label>Mevcut Küçük Resim </label>
                 <br>
-                <img src="<?php echo $Blog['yapılan_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
+                <img src="/Bitirme/<?php echo $Blog['yapılan_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
                 object-fit: cover;  " alt="">
                 <br>
                 <label for="birthday">Tarih</label><br>

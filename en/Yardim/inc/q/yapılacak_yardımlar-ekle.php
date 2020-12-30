@@ -7,6 +7,7 @@ if ($_POST) {
     $Konala_text = p('yapılılacak_yardımlar_text');
     $Konala_title = p('yapılılacak_yardımlar_adres');
     $Konala_date = p('birthday');
+    $yardim_id=$_SESSION['yardimci_id'];
     $Konala_baslik = p('yapılacak_yardımlar_baslik');
     
     $posted = "resim1";
@@ -17,13 +18,13 @@ if ($_POST) {
         $efilename = explode('.', $filename);
         $uzanti = $efilename[count($efilename) - 1];
         $isim = md5(microtime());
-        $yeniad = "KanolaYagi" . $isim . "." . $uzanti . "";
+        $yeniad = "SEV" . $isim . "." . $uzanti . "";
         if (!file_exists("resimler")) {
             mkdir("resimler");
         }
-        $hedef1 = "resimler/" . $yeniad;
+        $hedef1 = "en/Yardim/resimler/" . $yeniad;
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
-            $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılılacak_yardımlar_p =0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılacak_yardımlar_tarih = '{$Konala_date}',   yapılılacak_yardımlar_url ='{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılılacak_yardımlar_text ='{$Konala_text}'");
+            $insert = $db->exec("INSERT INTO yapılacak_yardımlar  SET yapılılacak_yardımlar_p =0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılacak_yardımlar_tarih = '{$Konala_date}',   yapılılacak_yardımlar_url ='{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılılacak_yardımlar_text ='{$Konala_text}', yardimci_id= '{$yardim_id}'");
             //$insert->execute();
             echo "<p class='alert alert-success'>Yardım başarıyla eklendi. Lütfen Bekleyiniz...</p>";
             header("Refresh: 1; url=" . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar");

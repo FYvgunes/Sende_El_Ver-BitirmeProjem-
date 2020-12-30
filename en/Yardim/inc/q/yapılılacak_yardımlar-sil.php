@@ -7,7 +7,7 @@ $icerik_varmi = $sor->rowCount();
 if ($icerik_varmi > 0) {
     null;
 } else {
-    header("Location: " . URL . "/en/admin/index.php?do=yapilacak_yardimlar");
+    header("Location: " . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar");
     exit;
 }
 ?>
@@ -18,7 +18,7 @@ if ($icerik_varmi > 0) {
             <?php
             $sil = $db->prepare("DELETE FROM yapılacak_yardımlar WHERE yapılılacak_yardımlar_id={$id}");
             $sil->execute();
-            header("Refresh: 2; url=" . URL . "/en/admin/index.php?do=yapilacak_yardimlar");
+            header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar");
             ?>
             <p class="alert alert-success">Yapılan yardım Silindi</p>
         </div>

@@ -21,7 +21,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
             ?>
                 <div class="list-group-item list-trend">
                     <div class="clearfix content-heading">
-                        <img class="pull-left img-trend" src="<?php echo $content['yapılan_yardımlar_url']; ?>" />
+                        <img class="pull-left img-trend" src="/Bitirme/<?php echo $content['yapılan_yardımlar_url']; ?>" />
                         <h3 class="txt-trend">Yapılan Yardımlar <?php echo $content['yapılan_yardımlar_id']; ?> <br /><small><a target="_blank" href="<?php echo URL . "/en/" . $content['yapılan_yardımlar_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-duzenle&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-sil&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
                     </div>
                 </div>

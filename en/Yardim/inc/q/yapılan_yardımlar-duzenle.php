@@ -22,16 +22,19 @@ if ($_POST) {
     $Konala_text = p('yapılan_yardımlar_text');
     $Konala_title = p('yapılan_yardımlar_adres');
     $Konala_date = p('birthday');
+    
     $Konala_baslik = p('yapılan_yardımlar_baslik');
+   
     $posted = "resim1";
+    $yardim_id=$_SESSION['yardimci_id'];
     if (empty($_FILES["resim1"]['name'])) {
 
-        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
+        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ='{$id}' AND yardimci_id='{$yardim_id}'");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
         header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar ");
     }else if (!empty($Konala_date)){
 
-        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_tarih ='{$Konala_date}',  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ={$id}");
+        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_tarih ='{$Konala_date}',  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ='{$id}' AND yardimci_id='{$yardim_id}' ");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
         header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar  ");
     } 
@@ -75,7 +78,7 @@ $Blog = $sor->fetch(PDO::FETCH_ASSOC);
                     placeholder="Yardımın Adresi" />
                 <label>Mevcut Küçük Resim </label>
                 <br>
-                <img src="<?php echo $Blog['yapılan_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
+                <img src="/Bitirme/<?php echo $Blog['yapılan_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
                 object-fit: cover;  " alt="">
                 <br>
                 <label for="birthday">Tarih</label><br>
