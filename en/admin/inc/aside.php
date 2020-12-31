@@ -10,7 +10,7 @@
 
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=yapilacak_yardimlar"; ?>"><i class="fa fa-paw"></i> Yapılacak Yardımlar</a>
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=yapilan_yardimlar"; ?>"><i class="fa fa-paw"></i> Yapılan Yardımlar</a>
-            <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=contacttr"; ?>"><i class="fa fa-users"></i> Yardımseverler</a>
+            <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=yardimci"; ?>"><i class="fa fa-users"></i> Yardımseverler</a>
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=contacttr"; ?>"><i class="fa fa-users"></i> Kullanıcılar</a>
 
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=contacttr"; ?>"><i class="fas fa-fa-phone"></i> İletişim</a>
