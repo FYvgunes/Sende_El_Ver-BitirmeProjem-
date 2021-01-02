@@ -21,7 +21,7 @@ if ($_POST) {
         if (!file_exists("resimler")) {
             mkdir("resimler");
         }
-        $hedef1 = "en/adminresimler/" . $yeniad;
+        $hedef1 = "en/admin/resimler/" . $yeniad;
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
             $insert = $db->exec("INSERT INTO yapılan_yardımlar  SET yapılan_yardımlar_p=0, yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih='{$Konala_date}',    yapılan_yardımlar_url='{$hedef1}',  yapılan_yardımlar_adres='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}' , yardimci_id=1 ");
       

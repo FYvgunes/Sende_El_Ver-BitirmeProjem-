@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo $site_url . "/en/admin"; ?>"><i class="fa fa-lock"></i> Yönetim Paneli</a>
+            <a class="navbar-brand" href="<?php echo $site_url . "/en/gonullu"; ?>"><i class="fa fa-lock"></i> Yönetim Paneli</a>
         </div>
         <?php if (isset($_SESSION['login'])) { ?>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,10 +21,10 @@
                 </ul>
                 <ul class="nav navbar-nav ">
                     <li><a target="_blank" href="<?php echo URL . "/en/index.php"; ?>"><i class="fa fa-eye"></i> Siteyi Göster</a></li>
-                    <li><a href="<?php echo URL . "/en/admin/index.php?do=mesaj"; ?>"><i class="fa fa-comments"></i> Mesajlar</a></li>
-                    <li><a href="<?php echo URL . "/en/admin/index.php?do=cikis"; ?>"><i class="fa fa-sign-out"></i> Çıkış Yap</a></li>
-                    <li><a href="<?php echo URL . "/en/admin/index.php?do=ayar"; ?>"><i class="fa fa-cog"></i> Ayarlar</a></li>
-                    <li><a href="<?php echo URL . "/en/admin/index.php?do=guvenlik"; ?>"><i class="fa fa-shield"></i> Güvenlik</a></li>
+                    <li><a href="<?php echo URL . "/en/gonullu/index.php?do=mesaj"; ?>"><i class="fa fa-comments"></i> Mesajlar</a></li>
+                    <li><a href="<?php echo URL . "/en/gonullu/index.php?do=cikis"; ?>"><i class="fa fa-sign-out"></i> Çıkış Yap</a></li>
+                    <li><a href="<?php echo URL . "/en/gonullu/index.php?do=ayar"; ?>"><i class="fa fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="<?php echo URL . "/en/gonullu/index.php?do=guvenlik"; ?>"><i class="fa fa-shield"></i> Güvenlik</a></li>
 
                 </ul>
 

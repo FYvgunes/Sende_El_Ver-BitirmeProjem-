@@ -62,7 +62,7 @@ $sayfa1 = $sorgu->rowCount();
     <div class="section-inner">
         <h2 class="heading"><i class="fa fa-dashboard"></i> Yönetim Paneli</h2>
         <div class="item">
-            <p class="alert alert-info"><i class="fa fa-user"></i> Hoşgeldin, <?php echo $_SESSION['admin_username']; ?>!</p>
+            <p class="alert alert-info"><i class="fa fa-user"></i> Hoşgeldin, <?php echo $_SESSION['user_username']; ?>!</p>
 
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">

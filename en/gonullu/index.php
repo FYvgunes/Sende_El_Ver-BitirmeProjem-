@@ -32,20 +32,22 @@ require_once('../config.php');
                 <div class="primary col-md-4 col-sm-12 col-xs-12">
                     <?php
                     if ($_POST) {
-                        $kadi = p("admin_username");
-                        $sifre = p("admin_password");
+                        $kadi = p("user_username");
+                        $sifre = p("user_sifre");
                         if (empty($kadi) || empty($sifre)) {
                             $mesaj = "Kullanıcı Adı ve Şifre boş bırakılamaz...";
                         } else {
-                            $sifre = sifre($sifre);
-                            $giris = $db->query("SELECT * FROM Admin WHERE admin_username='{$kadi}' AND admin_password='{$sifre}'");
+                           
+                          
+                            $giris = $db->query("SELECT * FROM user WHERE user_username='{$kadi}' AND user_sifre='{$sifre}' ");
+                           
                             if ($giris->rowCount()) {
                                 $girdi = $giris->fetch(PDO::FETCH_ASSOC);
-                                $_SESSION['admin_id'] = $girdi['admin_id'];
-                                $_SESSION['admin_username'] = $girdi['admin_username'];
-                                $_SESSION['admin_eposta'] = $girdi['admin_eposta'];
+                                $_SESSION['user_id'] = $girdi['user_id'];
+                                $_SESSION['user_username'] = $girdi['user_username'];
+                                $_SESSION['user_email'] = $girdi['user_email'];
                                 $_SESSION['login']  = true;
-                                header("Location: " . URL . "/en/admin");
+                                header("Location: " . URL . "/en/gonullu");
                             } else {
                                 $mesaj = "Girilen Bilgiler Uyuşmuyor...";
                             }
@@ -53,14 +55,14 @@ require_once('../config.php');
                     }
                     ?>
                     <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-sign-in"></i> Giriş Yap</div>
+                        <div class="panel-heading"><i class="fa fa-sign-in"></i> Gönüllü Girişi</div>
                         <div class="panel-body">
                             <?php if ($_POST) {
                                 echo '<p class="alert alert-danger">' . $mesaj . '</p>';
                             } ?>
                             <form action="" method="POST">
-                                <input type="text" name="admin_username" class="form-control" placeholder="Kullanıcı Adı" />
-                                <input type="password" name="admin_password" class="form-control" placeholder="Şifre" />
+                                <input type="text" name="user_username" class="form-control" placeholder="Kullanıcı Adı" />
+                                <input type="password" name="user_sifre" class="form-control" placeholder="Şifre" />
                                 <input type="submit" value="Giriş Yap" class="btn btn-cta-primary form-control" />
                             </form>
 

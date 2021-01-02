@@ -32,11 +32,6 @@ if ($_POST) {
         $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ='{$id}' AND yardimci_id='{$yardim_id}'");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
         header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar ");
-    }else if (!empty($Konala_date)){
-
-        $insert = $db->exec("UPDATE   yapılan_yardımlar       SET  yapılan_yardımlar_p=0,  yapılan_yardımlar_tarih ='{$Konala_date}',  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_text ='{$Konala_text}',  yapılan_yardımlar_adres ='{$Konala_title}' WHERE  yapılan_yardımlar_id ='{$id}' AND yardimci_id='{$yardim_id}' ");
-        echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-        header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar  ");
     } 
     else if ($_FILES["resim1"]['name']) {
         $filename = $_FILES["$posted"]['name'];

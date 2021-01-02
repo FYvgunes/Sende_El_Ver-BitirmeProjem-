@@ -3,10 +3,10 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
 ?>
 <section class="section">
     <div class="section-inner">
-        <h2 class="heading"><i class="fa fa-file-text-o"></i> Yapılan Yardımlar<br /><small><a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-ekle"; ?>"><i class="fa fa-plus"></i> İçerik Ekle</a></small></h2>
+        <h2 class="heading"><i class="fa fa-file-text-o"></i> Gönüllüler<br /><small></h2>
         <div class="item row">
             <?php
-            $sorgu = $db->query("SELECT yapılan_yardımlar_id FROM yapılan_yardımlar WHERE yapılan_yardımlar_p =0 ", PDO::FETCH_ASSOC);
+            $sorgu = $db->query("SELECT user_id FROM user  ", PDO::FETCH_ASSOC);
             $ksayisi = $sorgu->rowCount();
             $sayfa = g("s") ? g("s") : 1;
             $limit = 12; // 12 Tane gösteriyoruz tek seferde
@@ -16,13 +16,16 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
             } // Kullanıcı rastgele sayfa girebilir get ile, bunu önlemek için gereksiz sorgudan kurtulmak için
             $baslangic = ($sayfa * $limit) - $limit;
 
-            $row = $db->query("SELECT * FROM yapılan_yardımlar WHERE yapılan_yardımlar_p =0  ORDER BY yapılan_yardımlar_id DESC  LIMIT $baslangic, $limit", PDO::FETCH_ASSOC);
+            $row = $db->query("SELECT * FROM user  ORDER BY user_id DESC  LIMIT $baslangic, $limit", PDO::FETCH_ASSOC);
             foreach ($row as $content) {
             ?>
                 <div class="list-group-item list-trend">
                     <div class="clearfix content-heading">
-                        <img class="pull-left img-trend" src="<?php echo $content['yapılan_yardımlar_url']; ?>" />
-                        <h3 class="txt-trend">Yapılan Yardımlar <?php echo $content['yapılan_yardımlar_id']; ?> <br /><small><a target="_blank" href="<?php echo URL . "/en/" . $content['yapılan_yardımlar_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-duzenle&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=yapılan_yardımlar-sil&id=" . $content['yapılan_yardımlar_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
+                       <i class="fa fa-users  pull-left img-trend" style="color:#00b894; font-size:25px; margin-top:10px"></i>
+                       <!-- <img class="pull-left img-trend" src="/Bitirme/Assets/images/avatar.svg" alt=""> -->
+                        <h3 class="txt-trend"><?php echo $content['user_username']; ?> - <span><?php echo $content['user_email']; ?></span> <br /> 
+                        
+                        <small> | <a href="<?php echo URL . "/en/admin/index.php?do=user-duzenle&id=" . $content['user_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('Yardımseveri silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=user-sil&id=" . $content['user_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
                     </div>
                 </div>
             <?php
@@ -30,7 +33,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
 
             if ($ksayisi > 0) {
             } else {
-                echo "<p class='alert alert-danger'>Henüz hiç Yardım eklenmemiş.</p>";
+                echo "<p class='alert alert-danger'>Henüz hiç bir gönüllü yok</p>";
             }
 
             if ($ksayisi > $limit) { ?>
