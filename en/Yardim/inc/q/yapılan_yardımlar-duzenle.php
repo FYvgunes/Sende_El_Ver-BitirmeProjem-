@@ -39,10 +39,10 @@ if ($_POST) {
         $uzanti = $efilename[count($efilename) - 1];
         $isim = md5(microtime());
         $yeniad = "" . $isim . "." . $uzanti . "";
-        $hedef1 = "resimler/" . $yeniad;
+        $hedef1 = "en/Yardim/resimler/" . $yeniad;
 
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
-            $insert = $db->exec("UPDATE   yapılan_yardımlar   SET   yapılan_yardımlar_p =0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih = '{$Konala_date}',   yapılan_yardımlar_url  ='{$hedef1}',  yapılan_yardımlar_adres ='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}'");
+            $insert = $db->exec("UPDATE   yapılan_yardımlar   SET   yapılan_yardımlar_p =0,  yapılan_yardımlar_baslik='{$Konala_baslik}',  yapılan_yardımlar_tarih = '{$Konala_date}',   yapılan_yardımlar_url  ='{$hedef1}',  yapılan_yardımlar_adres ='{$Konala_title}',  yapılan_yardımlar_text ='{$Konala_text}' WHERE  yapılan_yardımlar_id ='{$id}' AND yardimci_id='{$yardim_id}'");
             //$insert->execute();
             echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
             header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilan_yardimlar ");

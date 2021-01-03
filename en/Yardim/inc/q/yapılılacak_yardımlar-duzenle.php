@@ -27,14 +27,9 @@ if ($_POST) {
     $posted = "resim1";
     if (empty($_FILES["resim1"]['name'])) {
 
-        $insert = $db->exec("UPDATE  yapılacak_yardımlar   SET yapılılacak_yardımlar_p=0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılılacak_yardımlar_text ='{$Konala_text}', yapılılacak_yardımlar_adres='{$Konala_title}' , yardimci_id='{$yardim_id}'  WHERE yapılılacak_yardımlar_id={$id}");
+        $insert = $db->exec("UPDATE  yapılacak_yardımlar   SET yapılılacak_yardımlar_p=0, yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılılacak_yardımlar_text ='{$Konala_text}', yapılılacak_yardımlar_adres='{$Konala_title}', yapılacak_yardımlar_tarih ='{$Konala_date}',  yardimci_id='{$yardim_id}'  WHERE yapılılacak_yardımlar_id={$id}");
         echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
         header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar");
-    }else if (!empty($Konala_date)){
-
-        $insert = $db->exec("UPDATE  yapılacak_yardımlar   SET yapılılacak_yardımlar_p=0, yapılacak_yardımlar_tarih ='{$Konala_date}', yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılılacak_yardımlar_text ='{$Konala_text}', yapılılacak_yardımlar_adres='{$Konala_title}',yardimci_id='{$yardim_id}' WHERE yapılılacak_yardımlar_id={$id}");
-        echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
-        header("Refresh: 2; url=" . URL . "/en/Yardim/index.php?do=yapilacak_yardimlar ");
     } 
     else if ($_FILES["resim1"]['name']) {
         $filename = $_FILES["$posted"]['name'];
@@ -46,7 +41,7 @@ if ($_POST) {
 
         if (move_uploaded_file($_FILES["$posted"]['tmp_name'], "resimler/" . $yeniad)) {
            
-            $insert = $db->exec("UPDATE  yapılacak_yardımlar   SET  yapılılacak_yardımlar_p=0,yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılılacak_yardımlar_text ='{$Konala_text}', yapılılacak_yardımlar_adres='{$Konala_title}' WHERE yapılılacak_yardımlar_id='{$id}'");
+            $insert = $db->exec("UPDATE  yapılacak_yardımlar   SET  yapılılacak_yardımlar_p=0,yapılacak_yardımlar_baslik='{$Konala_baslik}', yapılılacak_yardımlar_text ='{$Konala_text}',yapılacak_yardımlar_tarih ='{$Konala_date}', yapılılacak_yardımlar_url= '{$hedef1}', yapılılacak_yardımlar_adres='{$Konala_title}',yardimci_id = '{$yardim_id}' WHERE yapılılacak_yardımlar_id={$id}");
             //$insert->execute();
           
             echo "<p class='alert alert-success'>İçerik başarıyla eklendi. Lütfen Bekleyiniz...</p>";
@@ -85,7 +80,7 @@ $Blog = $sor->fetch(PDO::FETCH_ASSOC);
                 <input type="date" class="form-control" id="birthday" name="birthday"
                     value="<?php echo $Blog['yapılılacak_yardımlar_tarih']; ?>"> <br>
                 <label>Küçük Resim Güncelle: </label><input type="file" name="resim1" class="form-control" value=""
-                    placeholder="Blok Küçük Resim URL" />
+                    placeholder="" />
 
                 <label>İçerik: </label><textarea
                     name="yapılılacak_yardımlar_text"><?php echo $Blog['yapılılacak_yardımlar_text']; ?></textarea>
