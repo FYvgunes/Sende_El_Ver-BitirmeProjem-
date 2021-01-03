@@ -12,13 +12,14 @@ if($_POST['sifre_degistir']){
 		$hata = "Şifre Boş Bırakılamaz.";
 	}else{
 		if($yeni_sifre1==$yeni_sifre2){
-			
-			$sorgu = $db->prepare("SELECT COUNT(*) FROM yardimci WHERE yardimci_sifre='{$sifre}' AND yardimci_id={$id}");
+		
+			$sorgu = $db->prepare("SELECT COUNT(*) FROM yardimci WHERE yardimci_sifre='{$eski_sifre}' AND yardimci_id={$id}");
 			$sorgu->execute();
 			$say = $sorgu->fetchColumn();
 			if($say>0){
-				$update = $db->prepare("UPDATE yardimci SET yardimci_sifre='{$ysifre}' WHERE yardimci_id={$id}");
+				$update = $db->prepare("UPDATE yardimci SET yardimci_sifre='{$yeni_sifre1}' WHERE yardimci_id={$id}");
 				$update->execute();
+				
 				echo "<p class='alert alert-success'>Şifre başarıyla güncellendi. Lütfen sisteme tekrar giriş yapın...</p>";
 				header("Refresh: 2; url=".URL."/en/Yardim/index.php?do=cikis");
 			}else{
@@ -43,11 +44,11 @@ if($_POST['email_degistir']){
 }
 
 if($_POST['kullaniciadi_degistir']){
-	$admin_username = p('admin_username');
-	if(empty($admin_username)){
+	$yardimci_username = p('yardimci_username');
+	if(empty($yardimci_username)){
 		$hata = "Kullanıcı Adını Boş Bırakamazsınız.";
 	}else{
-		$update_e = $db->prepare("UPDATE yardimci SET admin_username='{$admin_username}' WHERE yardimci_id={$id}");
+		$update_e = $db->prepare("UPDATE yardimci SET yardimci_username='{$yardimci_username}' WHERE yardimci_id={$id}");
 		$update_e->execute();
 		echo "<p class='alert alert-success'>Kullanıcı adı başarıyla güncellendi.</p>";
 		header("Refresh: 2; url=".URL."/en/Yardim/index.php?do=guvenlik");
@@ -97,7 +98,7 @@ $admin = $db->query("SELECT * FROM yardimci WHERE yardimci_id={$id}")->fetch(PDO
 					<div class="panel-heading"><i class="fa fa-user"></i> Kullanıcı Adı Güncelle</div>
 					<div class="panel-body">
 						<form action="" method="POST">
-							<input type="text" name="admin_username" class="form-control" placeholder="Yeni Kullanıcı Adı Gir" value="<?php echo $admin['admin_username']; ?>" />
+							<input type="text" name="yardimci_username" class="form-control" placeholder="Yeni Kullanıcı Adı Gir" value="<?php echo $admin['yardimci_username']; ?>" />
 							<input type="hidden" name="kullaniciadi_degistir" value="1" />
 							<input type="submit" value="GÜNCELLE" class="btn btn-info form-control" />
 						</form>
