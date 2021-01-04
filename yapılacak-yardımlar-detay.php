@@ -2,13 +2,13 @@
 define("INDEX", true);
 require_once('config.php');
 
-$yapılan_yardımlar_id = $_GET['do'];
-$sor = $db->query("SELECT * FROM yapılan_yardımlar  WHERE yapılan_yardımlar_id = '$yapılan_yardımlar_id'");
+$yapılılacak_yardımlar_id = $_GET['do'];
+$sor = $db->query("SELECT * FROM yapılacak_yardımlar  WHERE yapılılacak_yardımlar_id = '$yapılılacak_yardımlar_id'");
 $sorgu = $sor->fetch(PDO::FETCH_ASSOC);
 
-$sorgu1 = $db->prepare("SELECT * FROM yapılan_yardımlar Where yapılan_yardımlar_id=:id");
+$sorgu1 = $db->prepare("SELECT * FROM yapılacak_yardımlar Where yapılılacak_yardımlar_id=:id");
 $sorgu1->execute(array(
-    "id" => $yapılan_yardımlar_id
+    "id" => $yapılılacak_yardımlar_id
 ));
 $islem = $sorgu1->fetch(PDO::FETCH_ASSOC);
 
@@ -25,7 +25,7 @@ $islem = $sorgu1->fetch(PDO::FETCH_ASSOC);
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>SEV - <?php echo kisaMetin($islem['yapılan_yardımlar_baslik'], 60) ?></title>
+    <title>SEV - <?php echo kisaMetin($islem['yapılacak_yardımlar_baslik'], 60) ?></title>
   </head>
   <body>
     <!-- Header  Start -->
@@ -49,24 +49,24 @@ $islem = $sorgu1->fetch(PDO::FETCH_ASSOC);
 
       <div class="about">
         <div class="imgbox">
-          <img src="/Bitirme/<?php echo $islem['yapılan_yardımlar_url'] ;?>" alt="" />
+          <img src="/Bitirme/<?php echo $islem['yapılılacak_yardımlar_url'] ;?>" alt="" />
         </div>
         <div class="contentbox">
           <p>
            <span style="color:#00b894;">Başlık:</span> 
-           <?php echo $islem['yapılan_yardımlar_baslik'];?>
+           <?php echo $islem['yapılacak_yardımlar_baslik'];?>
           </p>
            <p>
             <span style="color:#00b894;">Yapılanlar</span>
-           <?php echo $islem['yapılan_yardımlar_text'];?>
+           <?php echo $islem['yapılılacak_yardımlar_text'];?>
           </p>
            <p>
             <span style="color:#00b894;">Adres:</span>
-           <?php echo $islem['yapılan_yardımlar_adres'];?>
+           <?php echo $islem['yapılılacak_yardımlar_adres'];?>
           </p>
            <p>
             <span style="color:#00b894;">Tarih:</span>
-           <?php echo tarih($islem['yapılan_yardımlar_tarih']);?>
+           <?php echo tarih($islem['yapılacak_yardımlar_tarih']);?>
           </p>
         </div>
       </div>

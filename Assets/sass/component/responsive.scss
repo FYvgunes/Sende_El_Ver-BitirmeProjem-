@@ -13,6 +13,7 @@
     }
   }
 }
+
 @media (max-width: 750px) {
   .header {
     .header-title {
@@ -51,6 +52,7 @@
       }
     }
   }
+
   .partners {
     .partner {
       width: calc(52% - 10px);
@@ -63,6 +65,7 @@
         }
       }
     }
+
     .about {
       padding: 0 30px;
 
@@ -76,17 +79,20 @@
       }
     }
   }
+
   #contact {
     padding: 20px 50px;
 
     .contacts {
       .contact {
         width: 100%;
+
         .contact-form {
           button {
             float: left;
           }
         }
+
         .contact-info {
           padding: 20px 5px;
         }
@@ -99,6 +105,7 @@
   .about {
     flex-wrap: wrap;
     padding: 0 10px;
+
     .imgbox {
       width: 100%;
       height: 350px;
@@ -135,6 +142,7 @@
       }
     }
   }
+
   .hakkimizda {
     .header-title {
       padding: 0 15px;
@@ -156,25 +164,29 @@
       }
     }
   }
+
   #contact {
     padding: 20px 10px;
 
     .contacts {
       .contact {
         width: 100%;
+
         .contact-form {
           button {
             float: left;
           }
         }
+
         .contact-info {
           padding: 20px 5px;
         }
       }
     }
   }
+
   .helpcards {
-   margin-right: 20px;
+    margin-right: 20px;
     padding: 0;
 
     .helpcard {
@@ -192,6 +204,7 @@
     .footers {
       .footer {
         width: 100%;
+
         ul {
           padding: 0;
           margin: 0;
@@ -204,6 +217,7 @@
       }
     }
   }
+
   //Partnerler kısmı
 
   .partners {
@@ -221,10 +235,12 @@
       }
     }
   }
+
   //Hakkımızda
   .about {
     flex-wrap: wrap;
     padding: 0 10px;
+
     .imgbox {
       width: 100%;
       height: 350px;
@@ -261,6 +277,7 @@
       }
     }
   }
+
   .hakkimizda {
     .header-title {
       padding: 0 15px;
@@ -287,13 +304,16 @@
   .Yardım_panel {
     .header-title {
       padding: 0 10px;
+
       h1 {
         font-size: 30px;
       }
     }
   }
+
   .yaplacak-yardımlar {
     padding: 20px 5px;
+
     .helsp {
       .help {
         @include border-radio(0px);
@@ -304,15 +324,49 @@
         &:last-child {
           margin-bottom: 0px;
         }
+
         .imagebox {
           display: flex;
           flex-direction: column;
           padding: 0 20px;
           text-align: center;
+
+          img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            object-fit: cover;
+            @include border-radio(50%);
+          }
+
+          .content {
+            padding: 0;
+            margin: 0;
+            a {
+            
+            font-size: 18px;
+            padding: 10px 15px;
+            text-align:center;
+            
+            
+
+            
+            @include transition(0.5s);
+
+            &:hover {
+              font-weight: 600;
+            }
+          }
+          }
+
+
+
         }
       }
     }
   }
+
   .main .slider .slides h1 {
     font-size: 2.5em;
     color: #fff;
@@ -321,9 +375,11 @@
     text-align: center;
     margin: 0;
   }
+
   .main .slider .slides p {
     padding: 0px 10px;
   }
+
   .main a.suppart_btn {
     text-align: center;
     bottom: 2%;

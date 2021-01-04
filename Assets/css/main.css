@@ -987,7 +987,7 @@ body {
   .about .contentbox {
     width: 40%;
     padding: 80px;
-    text-align: center; }
+    text-align: left; }
     .about .contentbox p {
       font-size: 19px;
       font-weight: 600;
@@ -1178,7 +1178,8 @@ body {
     .yaplacak-yardımlar .helsp .help .imagebox {
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: flex-start;
+      position: relative; }
       .yaplacak-yardımlar .helsp .help .imagebox img {
         display: block;
         width: 200px;
@@ -1191,7 +1192,7 @@ body {
         -ms-border-radius: 50%;
         -o-border-radius: 50%; }
       .yaplacak-yardımlar .helsp .help .imagebox .content {
-        padding: 0;
+        padding: 0 270px 0px 75px;
         margin: 0; }
         .yaplacak-yardımlar .helsp .help .imagebox .content a {
           color: #00b894;
@@ -1682,6 +1683,31 @@ body {
         flex-direction: column;
         padding: 0 20px;
         text-align: center; }
+        .yaplacak-yardımlar .helsp .help .imagebox img {
+          display: block;
+          width: 200px;
+          height: 200px;
+          padding: 5px;
+          object-fit: cover;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%; }
+        .yaplacak-yardımlar .helsp .help .imagebox .content {
+          padding: 0;
+          margin: 0; }
+          .yaplacak-yardımlar .helsp .help .imagebox .content a {
+            font-size: 18px;
+            padding: 10px 15px;
+            text-align: center;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+            -o-transition: 0.5s all; }
+            .yaplacak-yardımlar .helsp .help .imagebox .content a:hover {
+              font-weight: 600; }
   .main .slider .slides h1 {
     font-size: 2.5em;
     color: #fff;
