@@ -60,24 +60,26 @@ $Blog = $sor->fetch(PDO::FETCH_ASSOC);
 
 <section class="section">
     <div class="section-inner">
-        <h2 class="heading"><i class="fa fa-plus"></i> Yapıacak Yardımlar Düzenle<br /><small><a
-                    href="<?php echo URL . "/en/admin/index.php?do=yapilacak_yardimlar "; ?>"><i
-                        class="fa fa-file-text-o"></i> Yardımları Göster Göster </a></small></h2>
+        <h2 class="heading"><i class="fa fa-plus"></i> Yapılacak Düzenle<br /><small><a
+                    href="<?php echo URL . "/en/gonullu/index.php?do=yapilacak_yardimlar "; ?>"><i
+                        class="fa fa-file-text-o"></i> Yardımları Göster </a></small></h2>
 
         <div class="item row">
             <form action="" method="POST" enctype="multipart/form-data">
-                <label>Yardımın Başlığı </label> <input type="text" name="yapılacak_yardımlar_baslik"
-                    class="form-control" value="<?php echo $Blog['yapılacak_yardımlar_baslik']; ?>"
-                    placeholder="Yardımın Başlığı" />
-
-                <label>Yardımın Adresi </label> <input type="text" name="yapılılacak_yardımlar_adres"
-                    class="form-control" value="<?php echo $Blog['yapılılacak_yardımlar_adres']; ?>"
-                    placeholder="Yardımın Adresi" />
-                <label>Mevcut Küçük Resim </label>
-                <br>
-                <img src="<?php echo $Blog['yapılılacak_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
+<img src="<?php echo $Blog['yapılılacak_yardımlar_url']; ?>" style="width: 250px;  height: 200px;
                 object-fit: cover;  " alt="">
                 <br>
+                <label>Yardımın Başlığı </label> 
+                 <p><?php echo $Blog['yapılacak_yardımlar_baslik']; ?></p>
+                
+
+                <label>Yardımın Adresi </label> 
+                 <p><?php echo $Blog['yapılılacak_yardımlar_adres']; ?></p>
+               
+                <label>Mevcut Küçük Resim </label>
+                <p></p>
+                <br>
+                
                 <label for="birthday">Tarih</label><br>
                 <input type="date" class="form-control" id="birthday" name="birthday"
                     value="<?php echo $Blog['yapılılacak_yardımlar_tarih']; ?>"> <br>

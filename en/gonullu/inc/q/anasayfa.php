@@ -3,9 +3,9 @@
 //kayıt sayılarını öğrenme
 $sorgu = $db->query("SELECT yapılılacak_yardımlar_id FROM yapılacak_yardımlar WHERE yapılılacak_yardımlar_p=0", PDO::FETCH_ASSOC);
 $sayfa1 = $sorgu->rowCount();
-// //kayıt sayılarını öğrenme
-// $sorgu = $db->query("SELECT aycicegiyagid FROM aycicegiyagtr WHERE aycicegiyag_p=0", PDO::FETCH_ASSOC);
-// $sayfa2 = $sorgu->rowCount();
+//kayıt sayılarını öğrenme
+$sorgu = $db->query("SELECT yapılan_yardımlar_id FROM yapılan_yardımlar WHERE yapılan_yardımlar_p=0", PDO::FETCH_ASSOC);
+$sayfa2 = $sorgu->rowCount();
 // //kayıt sayılarını öğrenme
 // $sorgu = $db->query("SELECT zeytinyagid FROM zeytinyagtr WHERE zeytinyag_p=0", PDO::FETCH_ASSOC);
 // $sayfa3 = $sorgu->rowCount();
@@ -86,41 +86,8 @@ $sayfa1 = $sorgu->rowCount();
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Yardımseverler</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa3; ?> Yardımsever var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=zeytinyagitr"; ?>">Yardımseverleri Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-warning">
-                        <div class="panel-heading"><i class="fa fa-file-text-o"></i> Toplam Kullanıcılar</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $sayfa4; ?> Kullanıcı var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=salcalartr"; ?>">Kullanıcıları Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         
-
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><i class="fa fa-comments"></i> Mesajlar</div>
-                        <div class="panel-body text-center">
-                            <p>Toplam <?php echo $mesaj; ?> Mesaj var.</p>
-                            <a href="<?php echo URL . "/en/admin/index.php?do=mesaj"; ?>">Mesajları Göster</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            
         </div>
         <hr />
 
