@@ -22,7 +22,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
                 <div class="list-group-item list-trend">
                     <div class="clearfix content-heading">
                         <img class="pull-left img-trend" src="/Bitirme/<?php echo $content['yapılılacak_yardımlar_url']; ?>" />
-                        <h3 class="txt-trend">Yapılacak Yardımlar <?php echo $content['yapılılacak_yardımlar_id']; ?> <br /><small><a href="<?php echo URL . "/en/admin/index.php?do=yapılılacak_yardımlar-duzenle&id=" . $content['yapılılacak_yardımlar_id']; ?>"><i class="fa fa-eye"></i> Sayfayı Görüntüle</a></h3>
+                        <h3 class="txt-trend">Yapılacak Yardımlar <?php echo $content['yapılılacak_yardımlar_id']; ?> <br /><small><a href="<?php echo URL . "/en/gonullu/index.php?do=yapılılacak_yardımlar-duzenle&id=" . $content['yapılılacak_yardımlar_id']; ?>"><i class="fa fa-eye"></i> Sayfayı Görüntüle</a></h3>
                     </div>
                 </div>
             <?php
@@ -40,18 +40,18 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
                         echo "<a><li class='btn btn-default'>" . $sayfa . "/" . $ssayisi . "</li></a>";
                         $forlimit = 1;
                         if ($sayfa > $forlimit) {
-                            echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=1'><li class='btn btn-default'>İlk</li></a>";
+                            echo "<a href='" . URL . "/en/gonullu/index.php?do=" . $do . "&s=1'><li class='btn btn-default'>İlk</li></a>";
                         }
                         for ($i = $sayfa - $forlimit; $i <= $sayfa + $forlimit; $i++) {
                             if ($i > 0 && $i <= $ssayisi) {
                                 if ($i == $sayfa) {
                                     echo "<a href=''><li class='btn btn-default active'>" . $i . "</li></a>";
                                 } else {
-                                    echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=" . $i . "'><li class='btn btn-default'>" . $i . "</li></a>";
+                                    echo "<a href='" . URL . "/en/gonullu/index.php?do=" . $do . "&s=" . $i . "'><li class='btn btn-default'>" . $i . "</li></a>";
                                 }
                             }
                         }
-                        echo "<a href='" . URL . "/en/admin/index.php?do=" . $do . "&s=" . $ssayisi . "'><li class='btn btn-default'>Son</li></a>";
+                        echo "<a href='" . URL . "/en/gonullu/index.php?do=" . $do . "&s=" . $ssayisi . "'><li class='btn btn-default'>Son</li></a>";
                         ?>
                     </ul>
                 </div>

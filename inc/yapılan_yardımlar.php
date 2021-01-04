@@ -40,7 +40,7 @@ $row = $db->query("SELECT * FROM yapılan_yardımlar WHERE yapılan_yardımlar_p
             <p><?php echo kisaMetin($yardim['yapılan_yardımlar_adres'], 150) ?></p>
             <p> <?php echo tarih($yardim['yapılan_yardımlar_tarih'], 150) ?></p>
         </h5>
-        <a href="#" class="help-btn">Yardım Detay</a>
+        <a href="<?php echo URL ?>/yapılan-yardım-detay.php?do= <?php echo $yardim['yapılan_yardımlar_id'];?>" class="help-btn">Yardım Detay</a>
     </div>
 </div>
 
