@@ -46,6 +46,21 @@
     }
   }
 }
+.Helps{
+  margin:0 auto;
+  max-width: 1380px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+}
+#Partners{
+
+  max-width: 1380px;
+  margin:0 auto;
+  
+  
+}
 
 .helpcards {
   padding: 0 40px;
@@ -56,10 +71,12 @@
 
   .helpcard {
     width: calc(22% - 10px);
+    max-height: 400px;
     background-color: rgba(233, 233, 233, 0.562);
     margin-left: 20px;
-    overflow: hidden;
+    overflow: 3;
     padding: 10px;
+    
     @include border-radio(5px);
     box-shadow: 3px 3px 20px 3px rgba(116, 116, 116, 0.5);
     @include transition(0.5s);
@@ -67,6 +84,62 @@
     &:hover {
       @include tranform(-10px);
       box-shadow: 5px 5px 20px 5px rgba(116, 116, 116, 0.5);
+    }
+    .contentbox{
+    overflow: hidden;
+    
+   
+      h4{
+        max-height: 50px;
+        padding:10px 5px 5px;
+        margin: 0;
+        font-size:16px;
+       overflow: hidden;
+       text-overflow:hidden;
+       display: -webkit-box;
+      -webkit-line-clamp: 2; /* kaç satırla sınırlayacağımızı yazıyoruz */
+      -webkit-box-orient: vertical;
+        
+      }
+      p{
+         padding:0px 5px 5px;
+         font-size: 14px;
+         overflow: hidden;
+       text-overflow:hidden;
+       display: -webkit-box;
+      -webkit-line-clamp: 3; /* kaç satırla sınırlayacağımızı yazıyoruz */
+      -webkit-box-orient: vertical;
+
+        margin: 0;
+      }
+      h5{
+         padding:0;
+        margin: 0;
+        overflow: hidden;
+       text-overflow:hidden;
+       display: -webkit-box;
+      -webkit-line-clamp: 2; /* kaç satırla sınırlayacağımızı yazıyoruz */
+      -webkit-box-orient: vertical;
+        p{
+          overflow: hidden;
+       text-overflow:hidden;
+       display: -webkit-box;
+      -webkit-line-clamp: 3; /* kaç satırla sınırlayacağımızı yazıyoruz */
+      -webkit-box-orient: vertical;
+           padding:5px 5px 5px;
+        margin: 0;
+        font-size: 12px;
+        &:last-child{
+          padding:10px;
+          margin-left:10px;
+          margin:-5px;
+          background-color: #00b894;
+          color:#fff;
+          text-align:center;
+          border-top-left-radius: 25px;
+        }
+        }
+      }
     }
 
     .imagebox {
