@@ -84,54 +84,8 @@ require_once('config.php');
         <p>Etrafımızda olan küçük dostlarımız için oluşturulan yardımlar</p>
       </div>
       <div class="helpcards">
-        <div class="helpcard">
-          <div class="imagebox">
-            <img src="Assets/images/res7.jpg" alt="" />
-          </div>
-          <div class="contentbox">
-            <h4>
-              Fatih Mah. Sair Sok. <br />
-              istanbul - Bağcılar
-            </h4>
-            <p>
-              Bulundukları Ortamda Toplamda 5 adet kedi var. Yemeğe ihtiyaçları
-              var
-            </p>
-            <a href="#" class="help-btn">Yardım Detay</a>
-          </div>
-        </div>
-        <div class="helpcard">
-          <div class="imagebox">
-            <img src="Assets/images/res3.jpg" alt="" />
-          </div>
-          <div class="contentbox">
-            <h4>
-              Fatih Mah. Sair Sok. <br />
-              istanbul - Bağcılar
-            </h4>
-            <p>
-              Bulundukları Ortamda Toplamda 5 adet kedi var. Yemeğe ihtiyaçları
-              var
-            </p>
-            <a href="#" class="help-btn">Yardım Detay</a>
-          </div>
-        </div>
-        <div class="helpcard">
-          <div class="imagebox">
-            <img src="Assets/images/res6.jpg" alt="" />
-          </div>
-          <div class="contentbox">
-            <h4>
-              Fatih Mah. Sair Sok. <br />
-              istanbul - Bağcılar
-            </h4>
-            <p>
-              Bulundukları Ortamda Toplamda 5 adet kedi var. Yemeğe ihtiyaçları
-              var
-            </p>
-            <a href="#" class="help-btn">Yardım Detay</a>
-          </div>
-        </div>
+        <?php include "inc/yardımlar.php"; ?>
+        
       </div>
     </section>
 
@@ -147,6 +101,22 @@ require_once('config.php');
         <div class="helpcard">
           <div class="imagebox">
             <img src="Assets/images/res4.jpg" alt="" />
+          </div>
+          <div class="contentbox">
+            <h4>
+              Fatih Mah. Sair Sok. <br />
+              istanbul - Bağcılar
+            </h4>
+            <p>
+              Bulundukları Ortamda Toplamda 5 adet kedi var. Yemeğe ihtiyaçları
+              var
+            </p>
+            <a href="#" class="help-btn">Yardım Detay</a>
+          </div>
+        </div>
+        <div class="helpcard">
+          <div class="imagebox">
+            <img src="Assets/images/res2.jpg" alt="" />
           </div>
           <div class="contentbox">
             <h4>

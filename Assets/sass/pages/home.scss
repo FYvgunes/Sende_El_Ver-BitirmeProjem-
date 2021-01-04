@@ -48,14 +48,14 @@
 }
 
 .helpcards {
-  padding: 0 80px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 
   .helpcard {
-    width: calc(30% - 10px);
+    width: calc(22% - 10px);
     background-color: rgba(233, 233, 233, 0.562);
     margin-left: 20px;
     overflow: hidden;
