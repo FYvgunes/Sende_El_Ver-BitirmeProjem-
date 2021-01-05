@@ -14,6 +14,7 @@
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=user"; ?>"><i class="fa fa-users"></i> Gönüllüler</a>
 
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=contacttr"; ?>"><i class="fas fa-fa-phone"></i> İletişim</a>
+            <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=header"; ?>"><i class="fas fa-fa-phone"></i> Header</a>
 
                 <!-- Contact End -->
 
