@@ -1,5 +1,6 @@
 <?php 
   $row = $db->query("SELECT * FROM Header  ORDER BY Header_id  ASC", PDO::FETCH_ASSOC);
+  $row1 = $db->query("SELECT * FROM Header  ORDER BY Header_id  ASC", PDO::FETCH_ASSOC);
 ?>
 
 <div class="navbar">
