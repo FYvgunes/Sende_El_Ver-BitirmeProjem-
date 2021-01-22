@@ -22,14 +22,14 @@ if (isset($_POST)) {
                 $mail->isSMTP();                                       
                 $mail->Host = "smtp.gmail.com";                   // Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                $mail->Username   = "veysel.gns3623@gmail.com";                     //aviteng e pota buraya ayzılacak
+                $mail->Username   = "projectbitirme@gmail.com";                     //aviteng e pota buraya ayzılacak
                 $mail->Password   = '1q2w3e4r5T*-?';                               // aviteng password
                 $mail->SMTPSecure = "tls";        // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                 $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
                 //Recipients
 
-                $mail->addAddress('veysel.gns3623@gmail.com', 'Sende El VER');   //avitengin email adresini buraya yazacaz
+                $mail->addAddress('projectbitirme@gmail.com', 'Sende El VER');   //avitengin email adresini buraya yazacaz
                 $mail->setFrom($_POST['email'], $_POST['name']);
                 
                 // Content
@@ -48,14 +48,14 @@ if (isset($_POST)) {
                         
                     );
                     $_SESSION["alert"]=$alert;
-                    header("location:/Bitirme/İletisim.php");
+                    header("location:/Bitirme/İletişim.php");
                 } else {
                     $alert = array(
                         "message" => "An Error Encountered While Trading",
                         "type" => "danger"
                     );
                     $_SESSION["alert"]=$alert;
-                    header("location:/Bitirme/İletisim.php");
+                    header("location:/Bitirme/İletişim.php");
                 }
             } catch (Exception $e) {
 
@@ -64,7 +64,7 @@ if (isset($_POST)) {
                     "type" => "danger"
                 );
                 $_SESSION["alert"]=$alert;
-                header("location:/Bitirme/İletisim.php");
+                header("location:/Bitirme/İletişim.php");
             }
         } else {
             $alert = array(
@@ -72,7 +72,7 @@ if (isset($_POST)) {
                 "type" => "danger"
             );
             $_SESSION["alert"]=$alert;
-            header("location:/Bitirme/İletisim.php");
+            header("location:/Bitirme/İletişim.php");
         }
     } else {
         $alert = array(
@@ -80,5 +80,5 @@ if (isset($_POST)) {
             "type" => "danger"
         );
         $_SESSION["alert"]=$alert;
-        header("location://Bitirme/İletisim.php");
+        header("location://Bitirme/İletişim.php");
     }

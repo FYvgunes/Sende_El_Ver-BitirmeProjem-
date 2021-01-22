@@ -7,7 +7,7 @@ require_once('config.php');
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEV - Yardımlarımız</title>
+    <title>SEV - Yapılacak Yardımlar</title>
     <link rel="stylesheet" href="Assets/css/main.css" />
     <link
       rel="stylesheet"
@@ -23,9 +23,8 @@ require_once('config.php');
       <div class="header-title">
         <h1>SENDE EL VER HAKKINDA</h1>
         <p>
-          Sende EL Ver projesi olarak 2020 yılında kuruldu. <br />
-          Kuruluşun amacı Hem geri dönüme katkı sağlamak hemde küçük
-          dostlarımıza destek vermek
+          Sende El Ver Projesi olarak bu güne kadar yardım ettiğimiz <br />
+          küçük dostlarımız
         </p>
       </div>
     </div>
@@ -38,12 +37,12 @@ require_once('config.php');
     <!-- Yapılan Yardımlar Start -->
     <section class="YapılanYardımlar" id="Hakkımızda1">
       <div class="section-title">
-        <h1>Yapılan <span>Y</span>ardımlar</h1>
+        <h1>Yapılacak <span>Y</span>ardımlar</h1>
       </div>
 
       <div class="yaplacak-yardımlar">
         <div class="helsp">
-          <?php include "inc/yapılan-yardımlar-help.php";?>
+          <?php include "inc/yapılacak-yardımlar-help.php";?>
         </div>
       </div>
     </section>

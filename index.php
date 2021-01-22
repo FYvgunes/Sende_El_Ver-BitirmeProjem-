@@ -10,9 +10,10 @@ require_once('config.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="Assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-  <title>SEV - Anasayfa</title>
+  <link rel="stylesheet" href="">
+  
+  <scrip src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></scrip>
+  <title> SEV - Anasayfa</title>
 </head>
 
 <body>
@@ -152,9 +153,10 @@ require_once('config.php');
   <?php include "inc/footer.php";?>
 
   <!-- Footer End -->
-  <script type="text/javascript" src="Assets/js/slider.js"></script>
+  <scrip type="text/javascript" src="Assets/js/slider.js"></scrip>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
-    $(document).ready(function () {
+     $(document).ready(function () {
       $(window).scroll(function () {
         if (this.scrollY > 10) {
           $(".navbar").addClass("stiyk");

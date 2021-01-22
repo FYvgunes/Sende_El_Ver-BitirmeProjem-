@@ -23,41 +23,28 @@ $row = $db->query("SELECT * FROM yapılan_yardımlar WHERE yapılan_yardımlar_p
             if ($ksayisi > 0) {
                 foreach ($row as $yardim) { ?>
 
-<div class="helpcard">
-    <div class="imagebox">
-        <img src="/Bitirme/<?php echo $yardim['yapılan_yardımlar_url'] ?>" alt="" />
-    </div>
-    <div class="contentbox">
+<div class="help">
+            <div class="imagebox">
+              <img src="/Bitirme/<?php echo $yardim['yapılan_yardımlar_url']?>" alt="" />
+              <div class="content">
+                <h3><?php echo $yardim['yapılan_yardımlar_adres']?></h3>
+                <p>
+                 <?php echo $yardim['yapılan_yardımlar_text'];?>
+                </p>
+                <a href="<?php echo URL?>/yapılan-yardım-detay.php?do=<?php echo $yardim['yapılan_yardımlar_id']?>">Detay</a>
+              </div>
+            </div>
+          </div>
 
-        <h4 style>
-         <?php echo kisaMetin($yardim['yapılan_yardımlar_baslik'], 60) ?> 
-        </h4>
+ <?php } ?>
 
-        <p>
-            <?php echo kisaMetin($yardim['yapılan_yardımlar_text'], 150) ?>
-        </p>
-        <h5 style="display:flex;padding:0 5px; justify-content: space-between;">
-            <p><?php echo kisaMetin($yardim['yapılan_yardımlar_adres'], 150) ?></p>
-            <p> <?php echo tarih($yardim['yapılan_yardımlar_tarih'], 150) ?></p>
-        </h5>
-        <a href="<?php echo URL ?>/yapılan-yardım-detay.php?do=<?php echo $yardim['yapılan_yardımlar_id'];?>" class="help-btn">Yardım Detay</a>
-    </div>
-</div>
-
-
-
-<?php } ?>
-
-<?php } else { ?>
+<?php } else { ?> 
 <section class="section">
     <div class="section-inner">
-        <div class="item row">
+       <div class="item row">
             <p class="text-center"><i class="fa fa-file-text-o fa-5x"></i></p>
             <p class="text-center">Hiç içerik eklenmemiş.</p>
         </div>
     </div>
 </section>
-
-
-<?php } ?>
-
+<?php } ?> 
