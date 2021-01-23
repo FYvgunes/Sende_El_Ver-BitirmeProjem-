@@ -6,7 +6,7 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
         <h2 class="heading"><i class="fa fa-file-text-o"></i> Partnerler<br /><small><a href="<?php echo URL . "/en/admin/index.php?do=partner-ekle"; ?>"><i class="fa fa-plus"></i> Partner Ekle</a></small></h2>
         <div class="item row">
             <?php
-            $sorgu = $db->query("SELECT partner_id FROM partner", PDO::FETCH_ASSOC);
+            $sorgu = $db->query("SELECT partner_id FROM partnerler", PDO::FETCH_ASSOC);
             $ksayisi = $sorgu->rowCount();
             $sayfa = g("s") ? g("s") : 1;
             $limit = 12; // 12 Tane gösteriyoruz tek seferde
@@ -16,13 +16,13 @@ echo !defined("INDEX") ? header("Location: " . URL . "/404.php") : null;
             } // Kullanıcı rastgele sayfa girebilir get ile, bunu önlemek için gereksiz sorgudan kurtulmak için
             $baslangic = ($sayfa * $limit) - $limit;
 
-            $row = $db->query("SELECT * FROM partner WHERE partner_p =0  ORDER BY partner_id DESC  LIMIT $baslangic, $limit", PDO::FETCH_ASSOC);
+            $row = $db->query("SELECT * FROM partnerler WHERE partner_p =0  ORDER BY partner_id DESC  LIMIT $baslangic, $limit", PDO::FETCH_ASSOC);
             foreach ($row as $content) {
             ?>
                 <div class="list-group-item list-trend">
                     <div class="clearfix content-heading">
                         <img class="pull-left img-trend" src="/Bitirme/<?php echo $content['partner_url']; ?>" />
-                        <h3 class="txt-trend">Yapılan Yardımlar <?php echo $content['partner_id']; ?> <br /><small><a target="_blank" href="<?php echo URL . "/en/" . $content['partner_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/admin/index.php?do=partner-duzenle&id=" . $content['partner_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=partner-sil&id=" . $content['partner_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
+                        <h3 class="txt-trend">Partnerler <?php echo $content['partner_id']; ?> <br /><small><a target="_blank" href="<?php echo URL .$content['partner_url']; ?>"><i class="fa fa-eye"></i> Sayfayı Göster</a> | <a href="<?php echo URL . "/en/admin/index.php?do=partner-duzenle&id=" . $content['partner_id']; ?>"><i class="fa fa-edit"></i> Düzenle</a> | <a onclick="return confirm('İçeriği silmek istediğinizden emin misiniz?');" href="<?php echo URL . "/en/admin/index.php?do=partner-sil&id=" . $content['partner_id']; ?>"><i class="fa fa-trash-o"></i> Sil</a></small></h3>
                     </div>
                 </div>
             <?php
