@@ -62,7 +62,7 @@ require_once('config.php');
     <a id="prev" class="prev">
       <</a> <a id="next" class="next">>
     </a>
-    <a href="yardımlar.php" class="suppart_btn">Yardım Bekleyen Küçük Dostlarımız</a>
+    <a href="yapilacak-yardimlar.php" class="suppart_btn">Yardım Bekleyen Küçük Dostlarımız</a>
   </div>
   <!-- <h1></h1>
         <p>
@@ -106,46 +106,13 @@ require_once('config.php');
 
   <!-- Partners Start -->
 
-  <section id="Partners">
-    <div class="section-title">
-      <h1><span>P</span>artnerler</h1>
-      <p>Yardımları yaparken bizleri destekleyen kuruluşlar</p>
-    </div>
-    <div class="partners">
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-    </div>
-    <div class="partners">
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-      <div class="partner">
-        <h1>LOGO</h1>
-      </div>
-    </div>
-  </section>
+  <?php include "inc/partner.php";?>
 
   <!-- Partners End -->
 
   <!-- Helps Button Start -->
   <section class="Help_button">
-    <a href="#">YARDIMDA BULUN</a>
+    <a href="İletişim.php">YARDIMDA BULUN</a>
   </section>
   <!-- Helps Button End -->
 
@@ -153,7 +120,7 @@ require_once('config.php');
   <?php include "inc/footer.php";?>
 
   <!-- Footer End -->
-  <scrip type="text/javascript" src="Assets/js/slider.js"></scrip>
+  <script type="text/javascript" src="Assets/js/slider.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
      $(document).ready(function () {

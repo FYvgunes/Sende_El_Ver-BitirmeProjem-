@@ -20,7 +20,7 @@
 
                 </ul>
                 <ul class="nav navbar-nav ">
-                    <li><a target="_blank" href="<?php echo URL . "/en/index.php"; ?>"><i class="fa fa-eye"></i> Siteyi Göster</a></li>
+                    <li><a target="_blank" href="<?php echo URL . "/index.php"; ?>"><i class="fa fa-eye"></i> Siteyi Göster</a></li>
                     <li><a href="<?php echo URL . "/en/admin/index.php?do=mesaj"; ?>"><i class="fa fa-comments"></i> Mesajlar</a></li>
                     <li><a href="<?php echo URL . "/en/admin/index.php?do=cikis"; ?>"><i class="fa fa-sign-out"></i> Çıkış Yap</a></li>
                     <li><a href="<?php echo URL . "/en/admin/index.php?do=ayar"; ?>"><i class="fa fa-cog"></i> Ayarlar</a></li>

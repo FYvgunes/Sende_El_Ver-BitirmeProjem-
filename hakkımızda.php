@@ -38,6 +38,11 @@ require_once('config.php');
       <div class="section-title">
         <h1><span>H</span>akkımızda</h1>
       </div>
+      <?php
+      $query = $db->prepare('SELECT * FROM hakkımızda');
+      $query->execute([]);
+      $arr = $query->fetch(PDO::FETCH_ASSOC);
+      ?>
 
       <div class="about">
         <div class="imgbox">
@@ -45,18 +50,14 @@ require_once('config.php');
         </div>
         <div class="contentbox">
           <p>
-            Sende El Ver projemizde olarak yardıma ve yemege ihtiyaçı olan küçük
-            doslarımız için resturanlarda ve evlerde fazla kalan yemeklerinizi
-            alarak yardıma muhtac küçük doslarımıza ulaştırmak için bu projemizi
-            hayata geçirdik.
+         <?php echo $arr["hakkımızda_1"]?>
           </p>
         </div>
       </div>
       <div class="about">
         <div class="contentbox">
           <p>
-            Projemizde gönüllük esastır. Gönüllü olarak bunları yapmaktayız. hiç
-            bir şekilde kar amacı gütmüyoruz.
+          <?php echo $arr["hakkımızda_2"]?>
           </p>
         </div>
         <div class="imgbox">
@@ -69,8 +70,7 @@ require_once('config.php');
         </div>
         <div class="contentbox">
           <p>
-            Projemiz 2020 yılında bir olay sonucunda ortaya çıkmıtır. Bu olay
-            ise yemekleri çöpe gitmesi engellemek için başlatılmıştır.
+          <?php echo $arr["hakkımızda_3"]?>
           </p>
         </div>
       </div>

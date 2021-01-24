@@ -66,11 +66,18 @@ require_once('config.php');
         </form>
       </div>
       <div class="contact">
+      <?php
+      $query = $db->prepare('SELECT * FROM iletisim');
+      $query->execute([]);
+      $arr = $query->fetch(PDO::FETCH_ASSOC);
+      ?>
         <div class="contact-info">
           <h3>Adres</h3>
-          <p>Fatih mah. Sair elmas Sokak no:3- 5 İstanbul/Fatih</p>
+          <p><?php echo $arr['Adres']?></p>
           <h3>Tel</h3>
-          <p>0533 555 45 54</p>
+          <p><?php echo $arr["Tel"]; ?></p>
+          <h3>E-Posta Hesebı</h3>
+          <p><?php echo $arr["eposta"]; ?></p>
         </div>
       </div>
     </div>

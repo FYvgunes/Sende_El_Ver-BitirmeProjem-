@@ -7,7 +7,7 @@ window.onload = function () {
     prevbtn.addEventListener("click", function () {
         prevslide();
     });
-    setTimeout("Changeimg()", 500);
+    setTimeout("Changeimg()", 7000);
 
 
 };
@@ -15,7 +15,7 @@ let SlidNumber = 0;
 
 
 function Changeimg() {
-    console.log(1);
+    
 
     let slider = document.getElementById("Slider");
     let slides = slider.getElementsByClassName("slides");
@@ -28,11 +28,14 @@ function Changeimg() {
     }
     slides[SlidNumber].classList.add("current");
 
+    setInterval(window.onload(),2000);
+
 
 }
 
 
 const nextslide = () => {
+   
     const slider = document.getElementById("Slider");
     const slides = slider.getElementsByClassName("slides");
     const currentslide = slider.getElementsByClassName("current");

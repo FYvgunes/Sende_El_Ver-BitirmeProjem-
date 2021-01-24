@@ -14,6 +14,7 @@
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=user"; ?>"><i class="fa fa-users"></i> Gönüllüler</a>
 
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=iletisim"; ?>"><i class="fa fa-phone" aria-hidden="true"></i> İletişim</a>
+            <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=Hakkımızda"; ?>"><i class="fa fa-paw" aria-hidden="true"></i> Hakkımızda</a>
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=partner"; ?>"><i class="fa fa-users" aria-hidden="true"></i> Partnerler</a>
             <p><a style="text-transform:capitalize; text-transform:uppercase; font-weight: 600;" href="<?php echo URL . "/en/admin/index.php?do=header"; ?>"><i class="fa fa-bars" aria-hidden="true"></i></i> Header</a>
 
